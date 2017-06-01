@@ -100,6 +100,7 @@ aceite2 = tkinter.PhotoImage(file="Aceite.png")
 
 def Level1():
     """
+    Nivel 1 de Traffic Road Racing
     """
     global level1,canvas,nivel1,w,x,y,m,k,f,r,contador,m2,w2,r2,f2,g1,g11,g2,g22,g3,g33,g4,g44,g5,g55,g6,g66,gas,equis,ac,gas2,ac2,ply1,ply2,puntoss,puntoss2
     level1 = tkinter.Toplevel(vt)
@@ -174,6 +175,15 @@ def Level1():
     GasolinaBonus()
     Aceite()
     Puntos()
+    
+
+def Ayuda():
+    """
+    Función para mostrar la ayuda en el shell.
+    """
+    a = open("ReadMe.txt","r")
+    for linea in a.readlines(): 
+        print(linea)
 
 
     
@@ -191,6 +201,7 @@ def keydown(e):
 # Funcion botones de los jugadores
 def key():
     """
+    Funcion para añadir el código ASCII de las teclas.
     """
     global x,y,i,j,k,t,w,h,w2,contadorg,contadorg2
     if 68 in h:
@@ -239,6 +250,7 @@ def key():
 # Funcion carretera
 def carretera():
     """
+    Función para hacer que la carretera se repita cada cierto número de pixeles
     """
     global w,w2,canvas,contador,i,k
     if(contador < 100):
@@ -254,6 +266,7 @@ def carretera():
 # Funcion Runner
 def Runner1():
     """
+    Función para hacer que el carro runner cambie de carril siempre sin importar dónde esté el jugador
     """
     global x,y,i,j,k,canvas,r,r2,equis,level1,contadorr,contadorr2,w,w2,x,y,contadorg,contadorg2,puntoss,puntoss2
     
@@ -340,6 +353,7 @@ def Runner1():
 # Funcion Minivan 
 def Minivan1():
     """
+    Función para hacer que el carro minivan siempre vaya en un carril.
     """
     global canvas,m,m2,i,k,x,j,y,equis,f,explosion,contadorg,contadorg2,contadorm,contadorm2,puntoss,puntoss2,w,w2,contador
     equis = random.uniform(0,100)
@@ -407,6 +421,7 @@ def Minivan1():
 # Funcion Fighter
 def Fighter1():
     """
+    Función para que el carro fighter persiga al jugador.
     """
     global i,j,k,canvas,equis,f,m,level1,contadorf,contadorf2,f2,l,contadorg,contadorg2,x,y,puntoss,puntoss2,w,w2
     equis = random.uniform(0,100)
@@ -510,6 +525,7 @@ def Fighter1():
 # Funcion gasolinabonus
 def GasolinaBonus():
     """
+    Función para hacer que aparezca el tanque de gasolina.
     """
     global gas,canvas,contadorgaso,contadorgaso2,equis,gas2,gasol,gasol2,x,y,contadorg,contadorg2,g1,g11,g2,g22,g3,g33,g4,g44,g5,g55,g6,g66
     equis = random.uniform(0,100)
@@ -628,6 +644,7 @@ def GasolinaBonus():
 # Funcion aceite
 def Aceite():
     """
+    Función que hace que salga una mancha de aceite aleatoriamente.
     """
     global ac,canvas,contadoraceite,contadoraceite2,equis,ac2,x,y,contadorg,contadorg2,puntoss,puntoss2
     equis = random.uniform(0,100)
@@ -693,6 +710,7 @@ puntoss2 = 0
 # Funcion puntos
 def Puntos():
     """
+    Función para mostrar el kilometraje.
     """
     global canvas,puntoss,puntoss2,score,score2,scorer,scorer2
     if(puntoss >= 0):
@@ -712,6 +730,7 @@ def Puntos():
 # Funcion de la gasolina
 def Gasolina():
     """
+    Función para mostrar la gasolina del jugador.
     """
     global contadorg,contadorg2,canvas,g1,g11,g2,g22,g3,g33,g4,g44,g5,g55,g6,g66,win,lose,r,r2,m,m2,f,f2,ac,ac2,gas,gas2,x,y,contador,puntoss,puntoss2
     if(contadorg > 0):
@@ -765,6 +784,7 @@ def Gasolina():
 ###################################################################################  LVL 2   #########################################################################
 def Level2():
     """
+    Nivel 2 de Traffic Road Racing
     """
     global level1,canvas,nivel2,nivel22,w,x,y,m,k,f,r,contador,m2,w2,r2,f2,g1,g11,g2,g22,g3,g33,g4,g44,g5,g55,g6,g66,gas,equis,ac,gas2,ac2,ply1,ply2,puntoss,puntoss2
     level1 = tkinter.Toplevel(vt)
@@ -841,95 +861,11 @@ def Level2():
     Puntos()
 
     
-# Funcion Runner2
-def Runner2():
-    """
-    """
-    global x,y,i,j,k,canvas,r,r2,equis,level1,contadorr,contadorr2,w,w2,x,y,contadorg,contadorg2,puntoss,puntoss2
-    
-    if(contadorr < 48):
-        contadorr = contadorr + 1
-        canvas.move(r,3,5)
-    if(contadorr2 < 48):
-        canvas.move(r2,3,5)
-        contadorr2 = contadorr2 + 1
-    if(contadorr >= 48 and contadorr < 100):
-        canvas.move(r,-3,5)
-        contadorr = contadorr + 1
-    if(contadorr2 >= 48 and contadorr2 < 100):
-        canvas.move(r2,-3,5)
-        contadorr2 = contadorr2 + 1
-    if(contadorr >= 100 and contadorr < 150):
-        canvas.move(r,3,5)
-        contadorr = contadorr + 1
-    if(contadorr2 >= 100 and contadorr2 < 150):
-        canvas.move(r2,3,5)
-        contadorr2 = contadorr2 + 1
-    if(contadorr >= 150 and contadorr < 200):
-        canvas.move(r,-3,5)
-        contadorr = contadorr + 1
-        if(contadorr >= 200):
-            contadorr = 0
-            r = canvas.create_image(200,0,image=runner)
-            
-    if(contadorr2 >= 150 and contadorr2 < 200):
-        canvas.move(r2,-3,5)
-        contadorr2 = contadorr2 + 1
-        if(contadorr2 >= 200):
-            contadorr2 = 0
-            r2 = canvas.create_image(800,0,image=runner2)
-            
-    canvas.after(30,Runner1)
-    crashx1=canvas.coords(x)[0]
-    crashy1=canvas.coords(x)[1]
-    crashrx2=canvas.coords(r)[0]
-    crashry2=canvas.coords(r)[1]
-    
-    crashx11=canvas.coords(y)[0]
-    crashy11=canvas.coords(y)[1]
-    crashrx22=canvas.coords(r2)[0]
-    crashry22=canvas.coords(r2)[1]
-    
-    if(crashx1 >= crashrx2 and crashx1 <= crashrx2 + 25 and crashy1 >= crashry2 and crashy1 <= crashry2 + 55):
-        canvas.delete(x)
-        x = canvas.create_image(200+i,620,image=vol1)
-        canvas.delete(r)
-        r = canvas.create_image(200,0,image=runner)
-        contadorr = 0
-        contadorg = contadorg - 10
-        puntoss = 98
-        canvas.move(w,0,-canvas.coords(w)[1])
-    if(crashx1 <= crashrx2 and crashx1 + 25 >= crashrx2 and crashy1 <= crashry2 and crashy1 + 55 >= crashry2):
-        canvas.delete(x)
-        x = canvas.create_image(200+i,620,image=vol1)
-        canvas.delete(r)
-        r = canvas.create_image(200,0,image=runner)
-        contadorm = 0
-        contadorr = contadorg - 10
-        puntoss = 98
-        canvas.move(w,0,-canvas.coords(w)[1])
-    if(crashx11 >= crashrx22 and crashx11 <= crashrx22 + 25 and crashy11 >= crashry22 and crashy11 <= crashry22 + 55):
-        canvas.delete(y)
-        y = canvas.create_image(795+k,620,image=vol2)
-        canvas.delete(r2)
-        r2 = canvas.create_image(800,0,image=runner2)
-        contadorr2 = 0
-        contadorg2 = contadorg2 - 10
-        puntoss2 = 98
-        canvas.move(w2,0,-canvas.coords(w2)[1])
-    if(crashx11 <= crashrx22 and crashx11 + 25 >= crashrx22 and crashy11 <= crashry22 and crashy11 + 55 >= crashry22):
-        canvas.delete(y)
-        y = canvas.create_image(795+k,620,image=vol2)
-        canvas.delete(r2)
-        r2 = canvas.create_image(800,0,image=runner2)
-        contadorr2 = 0
-        contadorg2 = contadorg2 - 10
-        puntoss2 = 98
-        canvas.move(w2,0,-canvas.coords(w2)[1])
 
 # Funcion Minivan 
 def Minivan2():
     """
+    Función para hacer que el carro minivan siempre vaya en un carril.
     """
     global canvas,m,m2,i,k,x,j,y,equis,f,explosion,contadorg,contadorg2,contadorm,contadorm2,puntoss,puntoss2,w,w2,contador
     equis = random.uniform(0,100)
@@ -997,6 +933,7 @@ def Minivan2():
 # Funcion Fighter
 def Fighter2():
     """
+    Función para que el carro fighter persiga al jugador.
     """
     global i,j,k,canvas,equis,f,m,level1,contadorf,contadorf2,f2,l,contadorg,contadorg2,x,y,puntoss,puntoss2,w,w2
     equis = random.uniform(0,100)
@@ -1102,6 +1039,7 @@ def Fighter2():
 
 def Level3():
     """
+    Nivel 3 de Traffic Road Racing
     """
     global level1,canvas,nivel3,nivel33,w,x,y,m,k,f,r,contador,m2,w2,r2,f2,g1,g11,g2,g22,g3,g33,g4,g44,g5,g55,g6,g66,gas,equis,ac,gas2,ac2,ply1,ply2,puntoss,puntoss2
     level1 = tkinter.Toplevel(vt)
@@ -1177,95 +1115,11 @@ def Level3():
     Aceite()
     Puntos()
 
-# Funcion Runner
-def Runner3():
-    """
-    """
-    global x,y,i,j,k,canvas,r,r2,equis,level1,contadorr,contadorr2,w,w2,x,y,contadorg,contadorg2,puntoss,puntoss2
-    
-    if(contadorr < 48):
-        contadorr = contadorr + 1
-        canvas.move(r,3,5)
-    if(contadorr2 < 48):
-        canvas.move(r2,3,5)
-        contadorr2 = contadorr2 + 1
-    if(contadorr >= 48 and contadorr < 100):
-        canvas.move(r,-3,5)
-        contadorr = contadorr + 1
-    if(contadorr2 >= 48 and contadorr2 < 100):
-        canvas.move(r2,-3,5)
-        contadorr2 = contadorr2 + 1
-    if(contadorr >= 100 and contadorr < 150):
-        canvas.move(r,3,5)
-        contadorr = contadorr + 1
-    if(contadorr2 >= 100 and contadorr2 < 150):
-        canvas.move(r2,3,5)
-        contadorr2 = contadorr2 + 1
-    if(contadorr >= 150 and contadorr < 200):
-        canvas.move(r,-3,5)
-        contadorr = contadorr + 1
-        if(contadorr >= 200):
-            contadorr = 0
-            r = canvas.create_image(200,0,image=runner)
-            
-    if(contadorr2 >= 150 and contadorr2 < 200):
-        canvas.move(r2,-3,5)
-        contadorr2 = contadorr2 + 1
-        if(contadorr2 >= 200):
-            contadorr2 = 0
-            r2 = canvas.create_image(800,0,image=runner2)
-            
-    canvas.after(30,Runner1)
-    crashx1=canvas.coords(x)[0]
-    crashy1=canvas.coords(x)[1]
-    crashrx2=canvas.coords(r)[0]
-    crashry2=canvas.coords(r)[1]
-    
-    crashx11=canvas.coords(y)[0]
-    crashy11=canvas.coords(y)[1]
-    crashrx22=canvas.coords(r2)[0]
-    crashry22=canvas.coords(r2)[1]
-    
-    if(crashx1 >= crashrx2 and crashx1 <= crashrx2 + 25 and crashy1 >= crashry2 and crashy1 <= crashry2 + 55):
-        canvas.delete(x)
-        x = canvas.create_image(200+i,620,image=vol1)
-        canvas.delete(r)
-        r = canvas.create_image(200,0,image=runner)
-        contadorr = 0
-        contadorg = contadorg - 10
-        puntoss = 98
-        canvas.move(w,0,-canvas.coords(w)[1])
-    if(crashx1 <= crashrx2 and crashx1 + 25 >= crashrx2 and crashy1 <= crashry2 and crashy1 + 55 >= crashry2):
-        canvas.delete(x)
-        x = canvas.create_image(200+i,620,image=vol1)
-        canvas.delete(r)
-        r = canvas.create_image(200,0,image=runner)
-        contadorm = 0
-        contadorr = contadorg - 10
-        puntoss = 98
-        canvas.move(w,0,-canvas.coords(w)[1])
-    if(crashx11 >= crashrx22 and crashx11 <= crashrx22 + 25 and crashy11 >= crashry22 and crashy11 <= crashry22 + 55):
-        canvas.delete(y)
-        y = canvas.create_image(795+k,620,image=vol2)
-        canvas.delete(r2)
-        r2 = canvas.create_image(800,0,image=runner2)
-        contadorr2 = 0
-        contadorg2 = contadorg2 - 10
-        puntoss2 = 98
-        canvas.move(w2,0,-canvas.coords(w2)[1])
-    if(crashx11 <= crashrx22 and crashx11 + 25 >= crashrx22 and crashy11 <= crashry22 and crashy11 + 55 >= crashry22):
-        canvas.delete(y)
-        y = canvas.create_image(795+k,620,image=vol2)
-        canvas.delete(r2)
-        r2 = canvas.create_image(800,0,image=runner2)
-        contadorr2 = 0
-        contadorg2 = contadorg2 - 10
-        puntoss2 = 98
-        canvas.move(w2,0,-canvas.coords(w2)[1])
 
 # Funcion Minivan
 def Minivan3():
     """
+    Función para hacer que el carro minivan siempre vaya en un carril.
     """
     global canvas,m,m2,i,k,x,j,y,equis,f,explosion,contadorg,contadorg2,contadorm,contadorm2,puntoss,puntoss2,w,w2,contador
     equis = random.uniform(0,100)
@@ -1333,6 +1187,7 @@ def Minivan3():
 # Funcion Fighter
 def Fighter3():
     """
+    Función para que el carro fighter persiga al jugador.
     """
     global i,j,k,canvas,equis,f,m,level1,contadorf,contadorf2,f2,l,contadorg,contadorg2,x,y,puntoss,puntoss2,w,w2
     equis = random.uniform(0,100)
@@ -1439,6 +1294,7 @@ def Fighter3():
 
 def Level4():
     """
+    Nivel 4 de Traffic Road Racing
     """
     global level1,canvas,nivel4,nivel44,w,x,y,m,k,f,r,contador,m2,w2,r2,f2,g1,g11,g2,g22,g3,g33,g4,g44,g5,g55,g6,g66,gas,equis,ac,gas2,ac2,ply1,ply2,puntoss,puntoss2
     level1 = tkinter.Toplevel(vt)
@@ -1514,95 +1370,11 @@ def Level4():
     Aceite()
     Puntos()
 
-# Funcion Runner
-def Runner4():
-    """
-    """
-    global x,y,i,j,k,canvas,r,r2,level1,contadorr,contadorr2,w,w2,x,y,contadorg,contadorg2,puntoss,puntoss2
-    
-    if(contadorr < 48):
-        contadorr = contadorr + 1
-        canvas.move(r,3,5)
-    if(contadorr2 < 48):
-        canvas.move(r2,3,5)
-        contadorr2 = contadorr2 + 1
-    if(contadorr >= 48 and contadorr < 100):
-        canvas.move(r,-3,5)
-        contadorr = contadorr + 1
-    if(contadorr2 >= 48 and contadorr2 < 100):
-        canvas.move(r2,-3,5)
-        contadorr2 = contadorr2 + 1
-    if(contadorr >= 100 and contadorr < 150):
-        canvas.move(r,3,5)
-        contadorr = contadorr + 1
-    if(contadorr2 >= 100 and contadorr2 < 150):
-        canvas.move(r2,3,5)
-        contadorr2 = contadorr2 + 1
-    if(contadorr >= 150 and contadorr < 200):
-        canvas.move(r,-3,5)
-        contadorr = contadorr + 1
-        if(contadorr >= 200):
-            contadorr = 0
-            r = canvas.create_image(200,0,image=runner)
-            
-    if(contadorr2 >= 150 and contadorr2 < 200):
-        canvas.move(r2,-3,5)
-        contadorr2 = contadorr2 + 1
-        if(contadorr2 >= 200):
-            contadorr2 = 0
-            r2 = canvas.create_image(800,0,image=runner2)
-            
-    canvas.after(30,Runner1)
-    crashx1=canvas.coords(x)[0]
-    crashy1=canvas.coords(x)[1]
-    crashrx2=canvas.coords(r)[0]
-    crashry2=canvas.coords(r)[1]
-    
-    crashx11=canvas.coords(y)[0]
-    crashy11=canvas.coords(y)[1]
-    crashrx22=canvas.coords(r2)[0]
-    crashry22=canvas.coords(r2)[1]
-    
-    if(crashx1 >= crashrx2 and crashx1 <= crashrx2 + 25 and crashy1 >= crashry2 and crashy1 <= crashry2 + 55):
-        canvas.delete(x)
-        x = canvas.create_image(200+i,620,image=vol1)
-        canvas.delete(r)
-        r = canvas.create_image(200,0,image=runner)
-        contadorr = 0
-        contadorg = contadorg - 10
-        puntoss = 98
-        canvas.move(w,0,-canvas.coords(w)[1])
-    if(crashx1 <= crashrx2 and crashx1 + 25 >= crashrx2 and crashy1 <= crashry2 and crashy1 + 55 >= crashry2):
-        canvas.delete(x)
-        x = canvas.create_image(200+i,620,image=vol1)
-        canvas.delete(r)
-        r = canvas.create_image(200,0,image=runner)
-        contadorm = 0
-        contadorr = contadorg - 10
-        puntoss = 98
-        canvas.move(w,0,-canvas.coords(w)[1])
-    if(crashx11 >= crashrx22 and crashx11 <= crashrx22 + 25 and crashy11 >= crashry22 and crashy11 <= crashry22 + 55):
-        canvas.delete(y)
-        y = canvas.create_image(795+k,620,image=vol2)
-        canvas.delete(r2)
-        r2 = canvas.create_image(800,0,image=runner2)
-        contadorr2 = 0
-        contadorg2 = contadorg2 - 10
-        puntoss2 = 98
-        canvas.move(w2,0,-canvas.coords(w2)[1])
-    if(crashx11 <= crashrx22 and crashx11 + 25 >= crashrx22 and crashy11 <= crashry22 and crashy11 + 55 >= crashry22):
-        canvas.delete(y)
-        y = canvas.create_image(795+k,620,image=vol2)
-        canvas.delete(r2)
-        r2 = canvas.create_image(800,0,image=runner2)
-        contadorr2 = 0
-        contadorg2 = contadorg2 - 10
-        puntoss2 = 98
-        canvas.move(w2,0,-canvas.coords(w2)[1])
 
 # Funcion Minivan
 def Minivan4():
     """
+    Función para hacer que el carro minivan siempre vaya en un carril.
     """
     global canvas,m,m2,i,k,x,j,y,equis,f,explosion,contadorg,contadorg2,contadorm,contadorm2,puntoss,puntoss2,w,w2,contador
     equis = random.uniform(0,100)
@@ -1670,6 +1442,7 @@ def Minivan4():
 # Funcion Fighter
 def Fighter4():
     """
+    Función para que el carro fighter persiga al jugador.
     """
     global i,j,k,canvas,equis,f,m,level1,contadorf,contadorf2,f2,l,contadorg,contadorg2,x,y,puntoss,puntoss2,w,w2
     equis = random.uniform(0,100)
@@ -1774,6 +1547,7 @@ def Fighter4():
 
 def Level5():
     """
+    Nivel 5 de Traffic Road Racing
     """
     global level1,canvas,nivel5,nivel55,w,x,y,m,k,f,r,contador,m2,w2,r2,f2,g1,g11,g2,g22,g3,g33,g4,g44,g5,g55,g6,g66,gas,equis,ac,gas2,ac2,ply1,ply2,puntoss,puntoss2
     level1 = tkinter.Toplevel(vt)
@@ -1850,96 +1624,10 @@ def Level5():
     Puntos()
 
  
-    
-# Funcion Runner
-def Runner5():
-    """
-    """
-    global x,y,i,j,k,canvas,r,r2,level1,contadorr,contadorr2,w,w2,x,y,contadorg,contadorg2,puntoss,puntoss2
-    
-    if(contadorr < 48):
-        contadorr = contadorr + 1
-        canvas.move(r,3,5)
-    if(contadorr2 < 48):
-        canvas.move(r2,3,5)
-        contadorr2 = contadorr2 + 1
-    if(contadorr >= 48 and contadorr < 100):
-        canvas.move(r,-3,5)
-        contadorr = contadorr + 1
-    if(contadorr2 >= 48 and contadorr2 < 100):
-        canvas.move(r2,-3,5)
-        contadorr2 = contadorr2 + 1
-    if(contadorr >= 100 and contadorr < 150):
-        canvas.move(r,3,5)
-        contadorr = contadorr + 1
-    if(contadorr2 >= 100 and contadorr2 < 150):
-        canvas.move(r2,3,5)
-        contadorr2 = contadorr2 + 1
-    if(contadorr >= 150 and contadorr < 200):
-        canvas.move(r,-3,5)
-        contadorr = contadorr + 1
-        if(contadorr >= 200):
-            contadorr = 0
-            r = canvas.create_image(200,0,image=runner)
-            
-    if(contadorr2 >= 150 and contadorr2 < 200):
-        canvas.move(r2,-3,5)
-        contadorr2 = contadorr2 + 1
-        if(contadorr2 >= 200):
-            contadorr2 = 0
-            r2 = canvas.create_image(800,0,image=runner2)
-            
-    canvas.after(30,Runner1)
-    crashx1=canvas.coords(x)[0]
-    crashy1=canvas.coords(x)[1]
-    crashrx2=canvas.coords(r)[0]
-    crashry2=canvas.coords(r)[1]
-    
-    crashx11=canvas.coords(y)[0]
-    crashy11=canvas.coords(y)[1]
-    crashrx22=canvas.coords(r2)[0]
-    crashry22=canvas.coords(r2)[1]
-    
-    if(crashx1 >= crashrx2 and crashx1 <= crashrx2 + 25 and crashy1 >= crashry2 and crashy1 <= crashry2 + 55):
-        canvas.delete(x)
-        x = canvas.create_image(200+i,620,image=vol1)
-        canvas.delete(r)
-        r = canvas.create_image(200,0,image=runner)
-        contadorr = 0
-        contadorg = contadorg - 10
-        puntoss = 98
-        canvas.move(w,0,-canvas.coords(w)[1])
-    if(crashx1 <= crashrx2 and crashx1 + 25 >= crashrx2 and crashy1 <= crashry2 and crashy1 + 55 >= crashry2):
-        canvas.delete(x)
-        x = canvas.create_image(200+i,620,image=vol1)
-        canvas.delete(r)
-        r = canvas.create_image(200,0,image=runner)
-        contadorm = 0
-        contadorr = contadorg - 10
-        puntoss = 98
-        canvas.move(w,0,-canvas.coords(w)[1])
-    if(crashx11 >= crashrx22 and crashx11 <= crashrx22 + 25 and crashy11 >= crashry22 and crashy11 <= crashry22 + 55):
-        canvas.delete(y)
-        y = canvas.create_image(795+k,620,image=vol2)
-        canvas.delete(r2)
-        r2 = canvas.create_image(800,0,image=runner2)
-        contadorr2 = 0
-        contadorg2 = contadorg2 - 10
-        puntoss2 = 98
-        canvas.move(w2,0,-canvas.coords(w2)[1])
-    if(crashx11 <= crashrx22 and crashx11 + 25 >= crashrx22 and crashy11 <= crashry22 and crashy11 + 55 >= crashry22):
-        canvas.delete(y)
-        y = canvas.create_image(795+k,620,image=vol2)
-        canvas.delete(r2)
-        r2 = canvas.create_image(800,0,image=runner2)
-        contadorr2 = 0
-        contadorg2 = contadorg2 - 10
-        puntoss2 = 98
-        canvas.move(w2,0,-canvas.coords(w2)[1])
-
 # Funcion Minivan
 def Minivan5():
     """
+    Función para hacer que el carro minivan siempre vaya en un carril.
     """
     global canvas,m,m2,i,k,x,j,y,equis,f,explosion,contadorg,contadorg2,contadorm,contadorm2,puntoss,puntoss2,w,w2,contador
     equis = random.uniform(0,100)
@@ -2007,6 +1695,7 @@ def Minivan5():
 # Funcion Fighter
 def Fighter5():
     """
+    Función para que el carro fighter persiga al jugador.
     """
     global i,j,k,canvas,equis,f,m,level1,contadorf,contadorf2,f2,l,contadorg,contadorg2,x,y,puntoss,puntoss2,w,w2
     equis = random.uniform(0,100)
@@ -2113,7 +1802,7 @@ lvl3 = tkinter.Button(vt,text="Lvl 3",command=Level3, font=("Minecraft",10), fg=
 lvl4 = tkinter.Button(vt,text="Lvl 4",command=Level4, font=("Minecraft",10), fg="white", bg="black").place(x=330,y=320)
 lvl5 = tkinter.Button(vt,text="Lvl 5",command=Level5, font=("Minecraft",10), fg="white", bg="black").place(x=390,y=320)
 cargar = tkinter.Button(vt,text="Cargar Partida",font=("Minecraft",10), fg="white", bg="black").place(x=230,y=350)
-ayuda = tkinter.Button(vt,text="Ayuda",font=("Minecraft",10), fg="white", bg="black").place(x=520,y=375)
+ayuda = tkinter.Button(vt,text="Ayuda",command=Ayuda, font=("Minecraft",10), fg="white", bg="black").place(x=520,y=375)
 # Ciclo para escuchar los eventos
 vt.mainloop()
 
